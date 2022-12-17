@@ -50,6 +50,11 @@
 
 - @SpringBootTest
   - 별다른 설정이 없다면 H2 DB를 실행한다.
+  - webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
+    - 실제 HTTP 서버를 띄운다.
+    - RestTemplate 또는 TestRestTemplate 와 함께 사용한다.
+  - webEnvironment = SpringBootTest.WebEnvironment.MOCK
+    - 실제 HTTP 서버를 띄우지 않는다.
 - @WebMvcTest
   - JPA가 동작하지 않는다.
   - JPA를 사용하려면 @SpringBootTest 와 TestRestTemplate 를 사용하면 된다.
@@ -63,6 +68,8 @@
   - 조회한 Entity 의 값이 변경될 때 시간이 자동으로 저장된다.
 - @EnableJpaAuditing
   - JPA Auditing 을 활성화한다. 
+- @Query
+  - Spring Data JPA 에서 지원하지 않는 메서드에 명시해서 직접 쿼리를 작성할 수 있다.
 
 ### 데이터베이스
 
@@ -90,8 +97,6 @@
   - 모든 로직이 서비스 클래스 내부에서 처리된다. 그래서 서비스 계층이 무의미하며, 객체란 단순히 데이터 덩어리 역할만 하게 된다.
 - 도메인 모델 
   - 서비스 메서드는 트랜잭션과 도메인 간의 순서만 보장해준다.
-
-### 도메인 모델
 
 ### 추천 도서
 - 도메인
