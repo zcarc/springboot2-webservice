@@ -1,6 +1,7 @@
 package com.zcarc.book.springboot2webservice.web.domain.posts;
 
-import org.assertj.core.api.Assertions;
+import com.zcarc.book.springboot2webservice.domain.posts.Posts;
+import com.zcarc.book.springboot2webservice.domain.posts.PostsRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +59,16 @@ class PostsRepositoryTest {
 
         // when
         List<Posts> postsList = postsRepository.findAll();
+
+        for (Posts posts : postsList) {
+            System.out.println("posts.getId() = " + posts.getId());
+            System.out.println("posts.getTitle() = " + posts.getTitle());
+            System.out.println("posts.getContent() = " + posts.getContent());
+            System.out.println("posts.getCreatedDate() = " + posts.getCreatedDate());
+            System.out.println("posts.getAuthor() = " + posts.getAuthor());
+            System.out.println("posts.getModifiedDate() = " + posts.getModifiedDate());
+        }
+
 
         // then
         Posts posts = postsList.get(0);

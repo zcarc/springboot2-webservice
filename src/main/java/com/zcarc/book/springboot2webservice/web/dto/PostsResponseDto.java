@@ -1,6 +1,6 @@
 package com.zcarc.book.springboot2webservice.web.dto;
 
-import com.zcarc.book.springboot2webservice.web.domain.posts.Posts;
+import com.zcarc.book.springboot2webservice.domain.posts.Posts;
 import lombok.Getter;
 
 @Getter

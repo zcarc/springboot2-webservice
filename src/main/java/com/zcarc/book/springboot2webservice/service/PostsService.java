@@ -1,7 +1,7 @@
-package com.zcarc.book.springboot2webservice.web.service.posts;
+package com.zcarc.book.springboot2webservice.service;
 
-import com.zcarc.book.springboot2webservice.web.domain.posts.Posts;
-import com.zcarc.book.springboot2webservice.web.domain.posts.PostsRepository;
+import com.zcarc.book.springboot2webservice.domain.posts.Posts;
+import com.zcarc.book.springboot2webservice.domain.posts.PostsRepository;
 import com.zcarc.book.springboot2webservice.web.dto.PostsListResponseDto;
 import com.zcarc.book.springboot2webservice.web.dto.PostsResponseDto;
 import com.zcarc.book.springboot2webservice.web.dto.PostsSaveRequestDto;

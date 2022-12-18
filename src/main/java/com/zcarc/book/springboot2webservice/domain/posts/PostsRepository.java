@@ -1,4 +1,4 @@
-package com.zcarc.book.springboot2webservice.web.domain.posts;
+package com.zcarc.book.springboot2webservice.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

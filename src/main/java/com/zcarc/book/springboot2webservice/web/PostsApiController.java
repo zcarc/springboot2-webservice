@@ -3,7 +3,7 @@ package com.zcarc.book.springboot2webservice.web;
 import com.zcarc.book.springboot2webservice.web.dto.PostsResponseDto;
 import com.zcarc.book.springboot2webservice.web.dto.PostsSaveRequestDto;
 import com.zcarc.book.springboot2webservice.web.dto.PostsUpdateRequestDto;
-import com.zcarc.book.springboot2webservice.web.service.posts.PostsService;
+import com.zcarc.book.springboot2webservice.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

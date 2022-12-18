@@ -1,4 +1,4 @@
-package com.zcarc.book.springboot2webservice.web.domain;
+package com.zcarc.book.springboot2webservice.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

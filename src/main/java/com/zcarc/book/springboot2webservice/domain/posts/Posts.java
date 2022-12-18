@@ -1,7 +1,7 @@
-package com.zcarc.book.springboot2webservice.web.domain.posts;
+package com.zcarc.book.springboot2webservice.domain.posts;
 
 
-import com.zcarc.book.springboot2webservice.web.domain.BaseTimeEntity;
+import com.zcarc.book.springboot2webservice.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
