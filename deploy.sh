@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# 이 파일은 step1 경로에 위치해야 한다.
-
 REPOSITORY=/home/ec2-user/app/step1
 PROJECT_NAME=springboot2-webservice
 
@@ -9,13 +7,13 @@ echo "> $REPOSITORY/$PROJECT_NAME/로 이동"
 
 cd $REPOSITORY/$PROJECT_NAME/
 
-echo "> Git Pull"
-
-git pull
-
-echo "> 프로젝트 Build 시작"
+echo "> Build 시작"
 
 ./gradlew build
+
+echo "> step1으로 이동"
+
+cd $REPOSITORY
 
 echo "> ${REPOSITORY}/에 Build 파일 복사"
 
@@ -41,4 +39,9 @@ JAR_NAME=$(ls -tr $REPOSITORY/ | grep jar | tail -n 1)
 
 echo "> JAR Name: $JAR_NAME"
 
-nohup java -jar $REPOSITORY/$JAR_NAME 2>&1 &
+echo "> $JAR_NAME 실행"
+
+nohup java -jar \
+    -Dspring.config.location=classpath:/application.properties,/home/ec2-user/app/application-oauth.properties \
+    -Dspring.profiles.active=oauth \
+    $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
