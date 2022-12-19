@@ -23,5 +23,4 @@ jobs:
 
       # 그레이들 실행
       - name: Execute Gradle build
-        with:
-          arguments: clean build
+        run: ./gradlew clean build
