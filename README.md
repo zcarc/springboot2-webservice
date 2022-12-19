@@ -100,4 +100,12 @@
 
 ### 추천 도서
 - 도메인
-  - DDD start(지앤선, 2016) 최범균
+  - DDD start(지앤선, 2016) - 최범균
+
+### 추천 강의
+- TDD
+  - [클린코더스](https://www.youtube.com/watch?v=60lLSe1phks&list=PLagTY0ogyVkIl2kTr08w-4MLGYWJz7lNK&index=1) - 백명석
+
+### 추천 아티클
+- CI
+  - [Continuous Integration (original version)](https://www.martinfowler.com/articles/originalContinuousIntegration.html) - 마틴 파울러
