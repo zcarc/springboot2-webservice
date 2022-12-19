@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# 이 파일은 step1 경로에 위치해야 한다.
+
 REPOSITORY=/home/ec2-user/app/step1
 PROJECT_NAME=springboot2-webservice
+
+echo "> $REPOSITORY/$PROJECT_NAME/로 이동"
 
 cd $REPOSITORY/$PROJECT_NAME/
 
@@ -13,11 +17,7 @@ echo "> 프로젝트 Build 시작"
 
 ./gradlew build
 
-echo "> step1 디렉토리로 이동"
-
-cd $REPOSITORY
-
-echo "> Build 파일 복사"
+echo "> ${REPOSITORY}/에 Build 파일 복사"
 
 cp $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/
 
