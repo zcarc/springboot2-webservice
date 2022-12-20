@@ -24,3 +24,19 @@ jobs:
       # 그레이들 실행
       - name: Execute Gradle build
         run: ./gradlew clean build
+
+      - name: Compress current directory
+        run: zip -r springboot2-webservice *
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ap-northeast-2c
+
+      - name: List files
+        run: ls -al
+
+      - name: Copy zip file to the S3
+        run: aws s3 cp springboot2-webservice.zip s3://freelec-springboot-s3
