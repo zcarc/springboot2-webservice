@@ -22,8 +22,20 @@ jobs:
       - name: Execute Gradle build
         run: ./gradlew clean build
 
-      - name: Compress current directory
-        run: zip -r springboot2-webservice *
+      - name: Create deploy directory
+        run: mkdir -p deploy
+
+      - name: Copy sh files to deploy
+        run: cp scripts/*.sh deploy/
+
+      - name: Copy yml files to deploy
+        run: cp appspec.yml deploy/
+
+      - name: Copy jar files to deploy
+        run: cp build/libs/*.jar deploy/
+
+      - name: Compress files
+        run: zip springboot2-webservice deploy -r
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
