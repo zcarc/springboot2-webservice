@@ -40,7 +40,7 @@ jobs:
 
       - name: Deploy to AWS EC2 from S3
         run: aws deploy create-deployment \ 
-          -application-name freelec-springboot2-webservice \
+          --application-name freelec-springboot2-webservice \
           --deployment-config-name CodeDeployDefault.AllAtATime \
           --deployment-group-name freelec-springboot2-webservice-group \
           --s3-location bucket=freelec-springboot-s3,bundleType=zip,key=springboot2-webservice.zip
