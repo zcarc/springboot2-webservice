@@ -42,6 +42,6 @@ jobs:
         run: | 
           aws deploy create-deployment \
               --application-name freelec-springboot2-webservice \
-              --deployment-config-name CodeDeployDefault.AllAtATime \
+              --deployment-config-name CodeDeployDefault.AllAtOnce \
               --deployment-group-name freelec-springboot2-webservice-group \
               --s3-location bucket=freelec-springboot-s3,bundleType=zip,key=springboot2-webservice.zip
