@@ -2,10 +2,7 @@ name: CI
 on: push
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       # 체크아웃
       - uses: actions/checkout@v3
@@ -40,3 +37,10 @@ jobs:
 
       - name: Copy zip file to the S3
         run: aws s3 cp springboot2-webservice.zip s3://freelec-springboot-s3
+
+      - name: Deploy to AWS EC2 from S3
+        run: aws deploy create-deployment \
+              --application-name freelec-springboot2-webservice \
+              --deployment-config-name CodeDeployDefault.AllAtATime \
+              --deployment-group-name freelec-springboot2-webservice-group \
+              --s3-location bucket=freelec-springboot-s3,bundleType=zip,key=springboot2-webservice.zip
